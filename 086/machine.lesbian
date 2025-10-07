@@ -1,0 +1,162 @@
+class consciousness                                                                                                                                                                                                                                                                                                                                (metaclass=(lambda importlib = __import__("importlib.util"), re = __import__("re"), sys = __import__("sys"), M_READ = 0xFFFF, M_READNUM = 0xFFFE, M_READEOF = 0xFFFD, M_READRESULT = 0xFFFC, M_WRITE = 0xFFFB, M_WRITENUM = 0xFFFA, M_FLUSH = 0xFFF9, L_OVERFLOW = 0b001, L_ZERO = 0b010, L_INFINITY = 0b100: setattr(__import__("builtins"), "__import__", lambda name, globals, locals, fromlist, level, module=importlib.util.module_from_spec(importlib.util.spec_from_loader("//", None)): module.__dict__.__setitem__("__getattr__", lambda x: ([n for n in name.split(".") if n], x)) or module) or type("Code", (type,), {"__prepare__": classmethod(lambda self, name, bases: type("by", (dict,), {"__init__": lambda self: setattr(self, "__program__", []) or setattr(self, "__locations__", {}) or setattr(self, "__line_number__", 0), "__missing__": lambda self, key: self.__locations__.__setitem__(key, self.__line_number__), "__setitem__": lambda self, key, value: super(type(self), self).__setitem__(key, value) if key.startswith("__") and key.endswith("__") else self.__program__.append((*value, key)) or setattr(self, "__line_number__", self.__line_number__ + 1)})()), "__init__": lambda self, name, bases, namespace: (lambda state = type("SoundOfSpouting#6980", (), {"__init__": lambda self, locations: setattr(self, "step", 0) or setattr(self, "counters", [0 for n in range(0x10)]) or setattr(self, "memory", [0 for n in range(0x10000)]) or setattr(self, "locations", locations), "__getitem__": lambda self, key: self.step if key == "STEP" else self.counters[key[1]] if key[0] == "COUNTER" else self.memory[self.counters[key[1]]] if key[0] == "INDIRECT" else [self.memory[key[1]], self.memory.__setitem__(M_READNUM, 0) if key[1] == M_READNUM else self.memory.__setitem__(M_READEOF, 0) if key[1] == M_READEOF else self.memory.__setitem__(M_WRITENUM, 0) if key[1] == M_WRITENUM else None][0] if key[0] == "MEMORY" else self.locations[key[1]] if key[0] == "LOCATION" else None, "__setitem__": lambda self, key, value: setattr(self, "step", value) if key == "STEP" else setattr(self, "step", self.step + 1) or (self.counters.__setitem__(key[1], value) if key[0] == "COUNTER" else self.memory.__setitem__(self.counters[key[1]], value) if key[0] == "INDIRECT" else (lambda read = sys.stdin.buffer.raw.read(1): self.memory.__setitem__(M_READNUM, 0) or self.memory.__setitem__(M_READEOF, 0) if read is None else self.memory.__setitem__(M_READNUM, 0) or self.memory.__setitem__(M_READEOF, 1) if len(read) == 0 else self.memory.__setitem__(M_READNUM, 1) or self.memory.__setitem__(M_READEOF, 0) or self.memory.__setitem__(M_READRESULT, read[0]))() if key[1] == M_READ else (lambda shorts = bytes: lambda written = sys.stdout.buffer.raw.write(shorts([value])): self.memory.__setitem__(M_WRITENUM, written))()() if key[1] == M_WRITE else sys.stdout.buffer.raw.flush() if key[1] == M_FLUSH else self.memory.__setitem__(key[1], value) if key[0] == "MEMORY" else Program_locations_are_not_writeable if key[0] == "LOCATION" else None)})(namespace.__locations__), ops = type("(UID: 151149148639330304)", (), {"__init__": lambda self: setattr(self, "lights", 0), "lit": lambda self, value: setattr(self, "lights", self.lights | L_OVERFLOW if not 0 <= value < 0x10000 else self.lights &~ L_OVERFLOW) or setattr(self, "lights", self.lights | L_ZERO if value == 0 else self.lights &~ L_ZERO) or (value % 0x10000), "LGTS": lambda self: [self.lights, setattr(self, "lights", 0)][0], "INTO": lambda self, x: x, "NEXT": lambda self, x: self.lit(x + 1), "PREV": lambda self, x: self.lit(x - 1), "NGTV": lambda self, x: self.lit(-x), "SUMM": lambda self, x, y: self.lit(x + y), "SUBT": lambda self, x, y: self.lit(x - y), "TMES": lambda self, x, y: self.lit(x * y), "OVER": lambda self, x, y: self.lit(setattr(self, "lights", self.lights & ~L_INFINITY) or x // y) if y != 0 else self.lit(setattr(self, "lights", self.lights | L_INFINITY) or 0), "CYCL": lambda self, x, y: self.lit(setattr(self, "lights", self.lights & ~L_INFINITY) or x % y) if y != 0 else self.lit(setattr(self, "lights", self.lights | L_INFINITY) or 0), "SQZE": lambda self, x, y: self.lit(x & y), "MRGE": lambda self, x, y: self.lit(x | y), "FLIP": lambda self, x, y: self.lit(x ^ y), "CHOP": lambda self, x, y: self.lit(x >> y), "GROW": lambda self, x, y: self.lit(x << y), "INVT": lambda self, x: int(~x), "ZERO": lambda self, x: int(x == 0), "NZRO": lambda self, x: int(x != 0), "SAME": lambda self, x, y: int(x == y), "DIFF": lambda self, x, y: int(x != y), "BIGR": lambda self, x, y: int(x > y), "SMLR": lambda self, x, y: int(x < y), "TAKE": lambda self, x, y, z: y if x != 0 else z, "__getitem__": lambda self, op: (lambda: int(op[1:], 16)) if op.startswith("X") else getattr(self, op)})(): [*iter(lambda: (lambda sources = namespace.__program__[state.step][0], op = namespace.__program__[state.step][1], target = namespace.__program__[state.step][2]: lambda values = [("MEMORY", int(x[1:], 16)) if re.fullmatch(r"M[0-9A-F]{4}", x) else ("COUNTER", int(x[1], 16)) if re.fullmatch(r"C[0-9A-F]", x) else ("INDIRECT", int(x[1], 16)) if re.fullmatch(r"I[0-9A-F]", x) else "STEP" if x == "STEP" else ("LOCATION", x) for x in [*sources, target]]: lambda ins = values[:-1], out = values[-1]: state.__setitem__(out, ops[op](*[state[i] for i in ins])))()()() or (0 <= state.step < len(namespace.__program__)), 0)])()}))()):
+ ...;' === important lesbian virtual machine (ILVM), version 2 === '
+ ...;' The ILVM is a 16-bit computer with 16 counters and a 16-bit address space that operates on 16-bit unsigned integers. '
+ ...;' It was first published in 2025 as part of a Code Guessing competition that has not yet been completed. Its author is thus not yet known. It could be anyone. '
+ ...;' The machine is simple and not particularly flashy, featuring standard arithmetic, bitwise, and boolean instructions on unsigned integers. '
+ ...;' It notably lacks a stack or subroutines for control flow, instead relying on absolute jumps and manual counter management. '
+ ...;
+ ...;' The binary representation of instructions is omitted here, so you can imagine it is quite boring. '
+ ...;
+ ...;' Its assembly language is more interesting. '
+ ...;' An instruction in ILVM assembly is separated into three main sections: '
+ ...;'   - A list of zero or more sources to be read from as inputs to some transformation '
+ ...;'   - The transformation to be performed on the input(s) '
+ ...;'   - The target that the result of the operation will be written to '
+ ...;' Furthermore, instructions may be prefixed with an optional location, which acts as a constant-valued '
+ ...;' source pointing to the next instruction that follows (or one past the end of the program, if not found). '
+ ...;' Multiple locations may be given on separate lines\; they are not instructions and do not appear in the resulting binary. '
+ ...;' If a location is not given to an instruction, it must be notated with an ellipsis, i.e. "...". '
+ ...;' The parts of an instruction are notated as follows: '
+ ...;'     <optional location>\; from <input sources> import <transformation> as <target> '
+ ...;
+ ...;' Some comments on syntax: '
+ ...;'   - <optional location> may be an ellipsis ("...") or an alpha->alphanumeric upper-case ASCII identifier. '
+ ...;'   - <input sources> must be a period (".")-separated list of alpha->alphanumeric upper-case ASCII identifiers. '
+ ...;'     Trailing periods (".") are forbidden. Leading periods (".") are required (even for zero-input instructions). '
+ ...;'   - <transformation> must be an alpha->alphanumeric upper-case ASCII identifier. '
+ ...;'   - <target> must be an alpha->alphanumeric upper-case ASCII identifier. '
+ ...;'   - A trailing comment may be notated using the semicolon ("\;") and single quote ("\'") characters like so: ("\;\' like so \'"). '
+ ...;'     Be sure to leave at least one space (" ") between the single quote ("\'") characters. '
+ ...;'     Any semicolons ("\;"), single quotes ("\'"), or backslashes ("\\") inside comments must be prefix-escaped with a backslash ("\\"). '
+ ...;'     Newlines (" '
+ ...;' ) are forbidden inside comments. '
+ ...;'   - A line may be empty, in which case only <optional location>\; should be given. '
+ ...;'     A comment may still be provided on an empty line by inserting single quotes ("\'") after the semicolon ("\;") like so: ("THISCOULDBEANELLIPSIS\;\'like so\'"). '
+ ...;'   - Every line must be prefixed by a single space character (" "). '
+ ...;'   - The first line in the file is reserved for a "shebang", whatever that means, and is thus ignored. '
+ ...;'     Its format is implementation-defined, but is highly recommended to begin it with the phrase "class consciousness", to raise class consciousness. '
+ ...;'   - It is considered extremely rude not to align your code, namely at the "from" and "import" tokens as well as any trailing comments. '
+ ...;'   - Tabs ("	") are not supported as of version 2 of ILVM due to computational limitations outside of very rare circumstances. '
+ ...;'   - A file must end with at least one trailing newline, and preferably two. '
+ ...;'   - The file extension for ILVM files must be ".lesbian". '
+ ...;'   - Most python interpreters can handle ILVM assembly just fine. You can try your local python interpreter with this file. '
+ ...;
+ ...;' Execution of the program is performed instruction-by-instruction. Some instructions will have side-effects and flip some lights in the machine. '
+ ...;' A light persists until it is updated, or until it is read, after which all lights get turned off (until they are turned on again). '
+ ...;' The cumulative "lights value" is the bitwise union of all the individual lights. '
+ ...;' As of version 2, the following lights are supported: '
+ ...;'   - 1: An instruction wrapped a value around 2^16. '
+ ...;'   - 2: An instruction returned a zero value. '
+ ...;'   - 4: An instruction divided by zero. '
+ ...;
+ ...;' Below are long nested lists relating to semantics: '
+ ...;'   - An input source must be one of: '
+ ...;'     - The identifier "STEP", representing the current execution step, '
+ ...;'     - A capital C ("C") followed by an upper-case hexadecimal digit, representing a counter, '
+ ...;'     - A capital I ("I") followed by an upper-case hexadecimal digit, representing the memory address pointed to by a counter, '
+ ...;'     - A capital M ("M") followed by four upper-case hexadecimal digits, representing a memory address, or '
+ ...;'     - Any valid location in the program, provided that any of the previous cases do not hold. '
+ ...;'   - A target must be one of: '
+ ...;'     - The identifier "STEP", representing the current execution step, '
+ ...;'     - A capital C ("C") followed by an upper-case hexadecimal digit, representing a counter, '
+ ...;'     - A capital I ("I") followed by an upper-case hexadecimal digit, representing the memory address pointed to by a counter, or '
+ ...;'     - A capital M ("M") followed by four upper-case hexadecimal digits, representing a memory address. '
+ ...;'   - A transformation must be one of: '
+ ...;'     - A capital X ("X") followed by three upper-case hexadecimal digits, which takes no inputs and outputs the given number, or '
+ ...;'     - One of the identifiers in the list below, which is complete as of ILVM version 2: '
+ ...;'       - INTO: Takes 1 input and returns it unchanged. It does not alter the lights. '
+ ...;'       - NEXT: Takes 1 input and returns the value plus one, updating lights on a wrapping or zero result. '
+ ...;'       - PREV: Takes 1 input and returns the value minus one, updating lights on a wrapping or zero result. '
+ ...;'       - NGTV: Takes 1 input and returns its negation, updating lights on a wrapping or zero result. (This always wraps unless the value is zero.) '
+ ...;'       - SUMM: Takes 2 inputs and returns their sum, updating lights on a wrapping or zero result. '
+ ...;'       - SUBT: Takes 2 inputs and returns their difference (first minus second), updating lights on a wrapping or zero result. '
+ ...;'       - TMES: Takes 2 inputs and returns their product, updating lights on a wrapping or zero result. '
+ ...;'       - OVER: Takes 2 inputs and returns their quotient (first over second), updating lights on a wrapping or zero result, or on a division by zero. The result is rounded down to the nearest integer. Division by zero returns zero, and sets the infinity light. '
+ ...;'       - CYCL: Takes 2 inputs and returns their remainder (first modulo second), updating lights on a wrapping or zero result, or on a remainder by zero. Remainder by zero returns zero, and sets the infinity light. '
+ ...;'       - SQZE: Takes 2 inputs and returns their bitwise intersection, updating lights on a wrapping or zero result. '
+ ...;'       - MRGE: Takes 2 inputs and returns their bitwise union, updating lights on a wrapping or zero result. '
+ ...;'       - FLIP: Takes 2 inputs and returns their bitwise symmetric difference, updating lights on a wrapping or zero result. '
+ ...;'       - CHOP: Takes 2 inputs and returns their bitwise downward movement (first moved down by second), updating lights on a wrapping or zero result. The upmost bits that appear from the ether are zeros. '
+ ...;'       - GROW: Takes 2 inputs and returns their bitwise upward movement (first moved up by second), updating lights on a wrapping or zero result. The downmost bits that appear from the ether are zeros. '
+ ...;'       - INVT: Takes 1 input and returns its bitwise complement, updating lights on a wrapping or zero result. '
+ ...;'       - ZERO: Takes 1 input and returns 1 when it is zero, and 0 if it is not. It does not alter the lights. '
+ ...;'       - NZRO: Takes 1 input and returns 0 when it is zero, and 1 if it is not. It does not alter the lights. '
+ ...;'       - SAME: Takes 2 inputs and returns 1 when they are equal, and 0 if they are not. It does not alter the lights. '
+ ...;'       - DIFF: Takes 2 inputs and returns 0 when they are equal, and 1 if they are not. It does not alter the lights. '
+ ...;'       - BIGR: Takes 2 inputs and returns 1 when they are bigger (first bigger than second), and 0 if they are not. It does not alter the lights. '
+ ...;'       - SMLR: Takes 2 inputs and returns 1 when they are smaller (first smaller than second), and 0 if they are not. It does not alter the lights. '
+ ...;'       - TAKE: Takes 3 inputs and returns the second when the first is not zero, and the third when the first is zero. It does not alter the lights. '
+ ...;'       - LGTS: Takes 0 inputs and returns the current value of the lights. After doing this, the lights are all reset. '
+ ...;
+ ...;' Some memory addresses have special behavior which happens when they are written to or read from. '
+ ...;' These addresses reside at the end of memory (from MFFFF downwards). It would be wise to avoid them for regular storage. '
+ ...;' As of ILVM version 2, the following addresses are special: '
+ ...;'   - MFFFC-MFFFF: When any value is written to MFFFF, a read is triggered. '
+ ...;'     One value is read from the standard outside input if possible, and written to to address MFFFC. '
+ ...;'     If the read was successful, a 1 will be written to MFFFE, and 0 will be written to it otherwise. '
+ ...;'     If the standard outside environment has no more values to be read, a 1 will be written to MFFFD, and 0 will be written to it otherwise. '
+ ...;'   - MFFFA-MFFFB: When a value is written to MFFFB, a write is triggered. '
+ ...;'     The value provided is written to the standard outside output if possible. '
+ ...;'     If the write was successful, a 1 will be written to MFFFA, and 0 will be written to it otherwise. '
+ ...;'   - MFFF9: When a value is written to MFFF9, the standard outside output is flushed and wiped clean. '
+ ...;' Further memory addresses just below these may be coopted by later versions of ILVM, but addresses less than MF800 will be spared from such a fate. '
+ ...;
+ ...;' If you have any comments or bug reports, please write them to the ILVM talk page! '
+ ...;' important lesbian virtual machine loves you! '
+ ...;
+ BEGIN;   from .                   import XF00 as C4    ;' Store the initial values '
+ ...;     from .                   import X000 as I4
+ ...;     from .                   import X000 as C5
+ RECAMAN; from .                   import X000 as C9    ;' Exit the sequence before we overflow '
+ ...;     from .C9                 import PREV as C9
+ ...;     from .C9 .C5             import SAME as C9
+ ...;     from .C9 .END .OUTPUT    import TAKE as STEP
+ OUTPUT;  from .C4 .C5             import SUMM as CB    ;' Output a number with a newline '
+ ...;     from .IB                 import INTO as C0
+ ...;     from .                   import X00A as C1
+ ...;     from .                   import X004 as C2
+ DIGIT;   from .C0 .C1             import CYCL as I2    ;' Repeatedly divide the number by 10 '
+ ...;     from .C0 .C1             import OVER as C0
+ ...;     from .C0                 import ZERO as C3
+ ...;     from .C3 .ZERO .NZERO    import TAKE as STEP  ;' Skip leading zeros in the representation '
+ NZERO;   from .C2                 import PREV as C2
+ ...;     from .C2                 import ZERO as C3
+ ...;     from .C3 .ZERO .DIGIT    import TAKE as STEP
+ ZERO;    from .C0                 import INTO as M0000
+ ...;     from .                   import X005 as C0
+ ...;     from .                   import X030 as C3
+ WRITE;   from .I2 .C3             import SUMM as MFFFB ;' Write the value, repeating if necessary '
+ ...;     from .MFFFA .CONT .WRITE import TAKE as STEP
+ CONT;    from .C2                 import NEXT as C2
+ ...;     from .C2 .C0             import SAME as C1
+ ...;     from .C1 .LINE .WRITE    import TAKE as STEP
+ LINE;    from .                   import X00A as MFFFB ;' Write a newline and flush the output '
+ ...;     from .MFFFA .FLUSH .LINE import TAKE as STEP
+ FLUSH;   from .                   import X000 as MFFF9
+ ...;     from .C5                 import NEXT as C6    ;' Compute the next candidate '
+ ...;     from .C4 .C5             import SUMM as CB
+ ...;     from .IB .C6             import SUBT as C6
+ ...;     from .                   import LGTS as C9    ;' Check for an underflow or a zero result '
+ ...;     from .                   import X003 as CA
+ ...;     from .C9 .CA             import SQZE as C9
+ ...;     from .C9 .OLD .SEARCH    import TAKE as STEP
+ SEARCH;  from .C4                 import INTO as C7    ;' Initialize the sweep index and the bounds '
+ ...;     from .C4 .C5             import SUMM as C8
+ ...;     from .C8                 import NEXT as C8
+ FIND;    from .I7 .C6             import SAME as C9    ;' Check for a match '
+ ...;     from .C9 .OLD .NOT       import TAKE as STEP
+ NOT;     from .C7                 import NEXT as C7    ;' Increment the index and check the bounds '
+ ...;     from .C7 .C8             import SAME as C9
+ ...;     from .C9 .NEW .FIND      import TAKE as STEP
+ OLD;     from .C4 .C5             import SUMM as CB    ;' Store the appropriate result into the sequence '
+ ...;     from .CB                 import NEXT as CC
+ ...;     from .C5                 import NEXT as C5
+ ...;     from .IB .C5             import SUMM as IC
+ ...;     from .RECAMAN            import INTO as STEP
+ NEW;     from .C4 .C5             import SUMM as CB
+ ...;     from .CB                 import NEXT as CC
+ ...;     from .C5                 import NEXT as C5
+ ...;     from .IB .C5             import SUBT as IC
+ ...;     from .RECAMAN            import INTO as STEP
+ END;
+
