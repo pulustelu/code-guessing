@@ -1,6 +1,6 @@
-# [Round 086](https://codeguessing.gay/086/): 
+# [Round 086](https://codeguessing.gay/086/): Make recamán's sequence
 
-[*Submitted entry*](https://codeguessing.gay/086/#)
+[*Submitted entry*](https://codeguessing.gay/086/#12)
 
 *Relevant files:* `machine.lesbian`
 
