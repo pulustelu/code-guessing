@@ -6,3 +6,6 @@
 **/.mypy_cache
 **/target
 **/*.toolbox
+**/.zig-cache
+**/zig-out
+**/.venv
